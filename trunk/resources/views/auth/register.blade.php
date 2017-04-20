@@ -92,6 +92,7 @@
         'Pacific/Tongatapu'              => '(GMT+13:00) Nuku\'alofa'
     );
 
+
 @endphp
 
 @section('content')
@@ -100,7 +101,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-primary">
                 <div class="panel-heading" style="font-size: 22px;">New Account</div>
-                <div class="panel-body">
+                <div class="panel-body" style="padding-bottom: 3px;">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
 
@@ -148,10 +149,10 @@
                                 </div>
 
                                 <div class="form-group" style="margin-bottom: 3px; text-align: justify;">
-                                    <label for="password-confirm" class="col-sm-4 control-label input-sm">Confirm Password</label>
+                                    <label for="Password_confirmation" class="col-sm-4 control-label input-sm">Confirm Password</label>
 
                                     <div class="col-sm-6">
-                                        <input id="password-confirm" type="password" class="form-control input-sm" name="password_confirmation" required>
+                                        <input id="Password_confirmation" type="password" class="form-control input-sm" name="Password_confirmation" required>
                                     </div>
                                 </div>
 
@@ -183,10 +184,10 @@
 
 
                                 <div class="form-group" style="margin-bottom: 3px;">
-                                    <label for="email-confirm" class="col-sm-4 control-label input-sm">Confirm Email Address</label>
+                                    <label for="Email_confirmation" class="col-sm-4 control-label input-sm">Confirm Email Address</label>
 
                                     <div class="col-sm-6">
-                                        <input id="email-confirm" type="email" class="form-control input-sm" name="email-confirm" required>
+                                        <input id="Email_confirmation" autocomplete="off" type="email" class="form-control input-sm" name="Email_confirmation" required>
                                     </div>
                                 </div>
 
@@ -227,10 +228,10 @@
                                 <hr/><!---------------------------------------HR--------------------------------------->
 
                                 <div class="form-group" style="margin-bottom: 0px; padding-bottom: 0px; text-align: justify;">
-                                    <label for="date-of-birth" class="col-sm-4 control-label input-sm">Date of Birth</label>
+                                    <label for="BirthDate" class="col-sm-4 control-label input-sm">Date of Birth</label>
 
-                                    <div id="date-of-birth" class="col-sm-6 input-group date" style="padding-left: 15px; padding-right: 15px; overflow-x: hidden;">
-                                        <input type="text" class="form-control input-sm" required>
+                                    <div class="col-sm-6 input-group date" style="padding-left: 15px; padding-right: 15px; overflow-x: hidden;">
+                                        <input name="BirthDate" id="BirthDate" type="text" class="form-control input-sm" readonly required>
                                         <span class="input-group-addon">
                                             <i class="glyphicon glyphicon-th"></i>
                                         </span>
@@ -258,12 +259,12 @@
                             <div class="panel-body">
 
                                 <div class="form-group">
-                                    <label for="gender" class="col-sm-4 control-label input-sm">Gender</label>
-                                    <div id="gender" class="col-sm-6 input-group-sm">
-                                        <select class="form-control input-sm" required>
+                                    <label for="Gender" class="col-sm-4 control-label input-sm">Gender</label>
+                                    <div class="col-sm-6 input-group-sm">
+                                        <select id="Gender" name="Gender" class="form-control input-sm" required>
                                             <option selected="selected">- Select Gender - </option>
-                                            <option value="m">Male</option>
-                                            <option value="f">Female</option>
+                                            <option value="M">Male</option>
+                                            <option value="F">Female</option>
                                         </select>
                                     </div>
                                 </div>
@@ -277,9 +278,9 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="timezone" class="col-sm-4 control-label input-sm">Timezone</label>
-                                    <div id="timezone" class="col-sm-6">
-                                        <select class="form-control input-sm" required>
+                                    <label for="Timezone" class="col-sm-4 control-label input-sm">Timezone</label>
+                                    <div class="col-sm-6">
+                                        <select id="Timezone" name="Timezone" class="form-control input-sm" required>
                                             @foreach($timezones as $tz=>$value)
                                                 @if($tz=='Asia/Taipei')
                                                     <option selected='selected' value="{{ $tz }}">{{ $value }}</option>
@@ -293,20 +294,20 @@
                             </div>
                         </div>
 
-                        <div class="panel panel-primary">
+                        <div class="panel panel-primary" style="padding-bottom: 10px;">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Forum Rules</h3>
                             </div>
-                            <div class="panel-body">
-                                <textarea rows="5" class="col-sm-12" style="padding-bottom: 0px; margin-bottom: 15px; resize: none;" readonly>
+                            <div class="panel-body" style="margin-bottom: 10px; padding-bottom: 10px;">
+                                <textarea rows="5" class="col-sm-12" style="resize: none; margin: 0px 0px 10px 0px" readonly>
                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed gravida euismod pharetra. Suspendisse cursus mi nec ante laoreet tincidunt. Praesent rhoncus tortor turpis, tincidunt dictum est luctus mattis. Duis eu consequat metus. Proin facilisis, odio et lacinia tempus, ante nisi maximus est, non posuere enim mauris quis elit. Nulla ornare eleifend lectus ut molestie. Ut et massa sed magna maximus viverra. Nam rhoncus a ipsum malesuada finibus. Sed fermentum tempor felis, id elementum arcu mattis a. Pellentesque scelerisque aliquet sagittis. Donec felis nulla, eleifend ut laoreet ac, fermentum fermentum nibh. Nam fringilla mi venenatis, pellentesque mi nec, aliquam lacus.
                                     Aenean ut gravida nisi, quis finibus eros. Suspendisse ut neque elementum, vestibulum nulla sed, fermentum nulla. Sed vel odio dapibus, viverra dui imperdiet, rutrum nunc. Ut sit amet commodo urna. Nunc ante mi, elementum et nisl ac, suscipit congue leo. Duis vel quam interdum, bibendum justo nec, congue dolor. Donec et porta turpis. Integer vel laoreet sem, id volutpat risus. Donec lacinia orci eget imperdiet laoreet. Duis a enim vel nisi porta mattis sed nec odio. Morbi rutrum faucibus pellentesque. Curabitur faucibus lectus quis est fermentum sagittis. Praesent in velit vel mi interdum iaculis eu in leo. Morbi ac gravida arcu.
                                     Morbi massa purus, sagittis at faucibus ut, varius eu eros. In vestibulum ut lorem vel ornare. Nulla sed ex arcu. Proin nulla odio, mollis at bibendum elementum, elementum eu ligula. Proin at libero a nunc vehicula mattis. Mauris placerat est ut nunc auctor pretium. Duis in ultricies ante.
                                    In condimentum facilisis tincidunt. Vivamus sed arcu diam. Integer vitae imperdiet justo, eget mollis lorem. Vivamus eleifend, turpis hendrerit sagittis ultrices, turpis enim lacinia arcu, a rhoncus diam lacus sit amet elit. Aliquam erat volutpat. Vestibulum sollicitudin purus ligula, quis accumsan dui consectetur sit amet. Morbi porttitor non sapien ut imperdiet.Maecenas suscipit augue sit amet mauris pharetra luctus. Aliquam ut eros varius, blandit ligula iaculis, volutpat erat. Cras eget venenatis velit. Sed vel risus vitae lacus vestibulum condimentum. Vivamus ultrices eu leo at viverra. Donec pulvinar mollis neque. Phasellus id libero semper, venenatis lorem ac, dictum massa. Donec pulvinar quam quis libero efficitur, et lacinia odio euismod. Donec id luctus enim.
                                 </textarea>
-                                <hr/>
-                                &nbsp;
-                                <input type="checkbox">&nbsp;&nbsp;I have read, and agree to abide by the Forum rules.
+                                <div class="checkbox input-sm">
+                                    <label style="vertical-align: middle;"><input type="checkbox" style="vertical-align: middle;">&nbsp;&nbsp;I have read, and agree to abide by the Forum rules.</label>
+                                </div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -323,4 +324,3 @@
     </div>
 </div>
 @endsection
-asd

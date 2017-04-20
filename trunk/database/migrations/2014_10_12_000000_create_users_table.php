@@ -20,9 +20,9 @@ class CreateUsersTable extends Migration
             $table->string('DisplayName',30)->unique();
             $table->string('Password');
             $table->date('BirthDate');
-            $table->char('Gender');
+            $table->char('Gender')->nullable();
             $table->string('Location')->nullable();
-            $table->float('TimeZone',2,2);
+            $table->string('Timezone')->nullable();
             $table->boolean('Status')->default(false);
             $table->rememberToken();
             $table->timestamps();
