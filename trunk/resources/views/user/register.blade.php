@@ -102,9 +102,8 @@
             <div class="panel panel-primary">
                 <div class="panel-heading" style="font-size: 22px;">New Account</div>
                 <div class="panel-body" style="padding-bottom: 3px;">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('register') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="register">
                         {{ csrf_field() }}
-
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Required Information</h3>
@@ -117,7 +116,7 @@
                                         <input id="Username" type="text" class="form-control input-sm" name="Username" value="{{ old('Username') }}" required autofocus>
 
                                         @if ($errors->has('Username'))
-                                            <span class="help-block" style="color: #707070;">
+                                            <span class="help-block" style="color: #701817;">
                                                 <strong>{{ $errors->first('Username') }}</strong>
                                             </span>
                                         @endif
@@ -141,7 +140,7 @@
                                         <input id="Password" type="password" class="form-control input-sm" name="Password" required>
 
                                         @if ($errors->has('Password'))
-                                            <span class="help-block" style="color: #404040;">
+                                            <span class="help-block" style="color: #701817;">
                                                 <strong>{{ $errors->first('Password') }}</strong>
                                             </span>
                                         @endif
@@ -159,7 +158,7 @@
                                 <div class="form-group" style="margin-bottom: 0px; padding-bottom: 0px; text-align: justify;">
                                     <div class="col-sm-4">&nbsp;</div>
                                     <div class="col-sm-6" style="padding-left: 15px; font-size: 10px;">
-                                        <span class="help-block" style="color: #404040;" style="margin-bottom: 0px; padding-bottom: 0px;">
+                                        <span class="help-block" style="color: #707070; margin-bottom: 0px; padding-bottom: 0px;">
                                         Please enter a password for your user account. Note that passwords are case-sensitive.
                                         </span>
                                     </div>
@@ -175,7 +174,7 @@
                                         <input id="Email" type="email" class="form-control input-sm" name="Email" value="{{ old('Email') }}" required>
 
                                         @if ($errors->has('Email'))
-                                            <span class="help-block" style="color: #404040;">
+                                            <span class="help-block" style="color: #701817;">
                                                 <strong>{{ $errors->first('Email') }}</strong>
                                             </span>
                                         @endif
@@ -194,7 +193,7 @@
                                 <div class="form-group" style="margin-bottom: 0px; padding-bottom: 0px; text-align: justify;">
                                     <div class="col-sm-4">&nbsp;</div>
                                     <div class="col-sm-6" style="padding-left: 15px; font-size: 10px;">
-                                        <span class="help-block" style="color: #404040;" style="margin-bottom: 0px; padding-bottom: 0px;">
+                                        <span class="help-block" style="color: #707070; margin-bottom: 0px; padding-bottom: 0px;">
                                             Please enter your valid email address for confirmation purposes. Don't forget to include .ph only if your email address has .ph at the end. We do not send spam or sell email addresses. Your email address will be kept private. <span style="color: darkred;">Do not use Hotmail, Outlook, or disposable email accounts.</span>
                                         </span>
                                     </div>
@@ -209,7 +208,7 @@
                                         <input id="DisplayName" type="text" class="form-control input-sm" name="DisplayName" value="{{ old('DisplayName') }}" required>
 
                                         @if ($errors->has('DisplayName'))
-                                            <span class="help-block" style="color: #404040;">
+                                            <span class="help-block" style="color: #701817;">
                                                 <strong>{{ $errors->first('DisplayName') }}</strong>
                                             </span>
                                         @endif
@@ -240,7 +239,7 @@
                                 <div class="form-group" style="margin-bottom: 0px; padding-bottom: 0px; text-align: justify;">
                                     <div class="col-sm-4">&nbsp;</div>
                                     <div class="col-sm-6" style="padding-left: 15px; font-size: 10px;">
-                                        <span class="help-block" style="color: #404040;" style="margin-bottom: 0px; padding-bottom: 0px;">
+                                        <span class="help-block" style="color: #404040 margin-bottom: 0px; padding-bottom: 0px;">
                                         There are certain forums that is only available for individuals with above a certain age. Please provide this information truthfully.
                                         </span>
                                     </div>
